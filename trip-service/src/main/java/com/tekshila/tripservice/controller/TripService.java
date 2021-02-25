@@ -3,11 +3,13 @@ package com.tekshila.tripservice.controller;
 import com.tekshila.tripservice.domain.Trip;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import java.util.Arrays;
 import java.util.List;
+import java.util.stream.Collectors;
 
 /*
  * Returns the trips the user has made in the past
@@ -30,9 +32,13 @@ public class TripService {
     /*
      * Returns the trips of the customers
      */
-    @GetMapping("{customerId}")
-    public List<Trip> listTrips() {
-        return
+    @GetMapping(path = "{customerId}")
+    public List<Trip> listTrips(@PathVariable(name = "customerId") Integer customerId) {
+        if(null == customerId) {
+            return trips; //all trips
+        } else {
+            return trips.stream().filter( f -> f.getCustomerId() == customerId).collect(Collectors.toList());
+        }
     }
 
 }
