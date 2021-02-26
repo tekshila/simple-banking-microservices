@@ -1,4 +1,4 @@
-package com.tekshila.customerservice.domain;
+package com.tekshila.userservice.domain;
 
 import lombok.AllArgsConstructor;
 import lombok.Data;

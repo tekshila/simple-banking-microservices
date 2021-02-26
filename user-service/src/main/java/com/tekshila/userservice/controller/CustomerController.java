@@ -1,7 +1,7 @@
-package com.tekshila.customerservice.controller;
+package com.tekshila.userservice.controller;
 
-import com.tekshila.customerservice.domain.Customer;
-import com.tekshila.customerservice.domain.Trip;
+import com.tekshila.userservice.domain.Customer;
+import com.tekshila.userservice.domain.Trip;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.*;
 import org.springframework.web.bind.annotation.*;
@@ -12,7 +12,7 @@ import java.util.List;
 import java.util.stream.Collectors;
 
 @RestController
-@RequestMapping(value = "/tekshila/api/v1/customers")
+@RequestMapping(value = "/tekshila/api/v1/users")
 public class CustomerController {
 
     List<Customer> customers = Arrays.asList(
@@ -41,7 +41,7 @@ public class CustomerController {
         } else {
             Customer cust = custs.get(0);
             ResponseEntity<Trip[]> resp = restTemplate.getForEntity("http://localhost:9002/tekshila/api/v1/trips/" + customerId, Trip[].class);
-            cust.setTrips(Arrays.asList(resp.getBody()));
+                cust.setTrips(Arrays.asList(resp.getBody()));
             return cust;
         }
     }

@@ -6,12 +6,12 @@
         <groupId>org.springframework.boot</groupId>
         <artifactId>spring-boot-starter-parent</artifactId>
         <version>2.4.3</version>
-        <relativePath/> <!-- lookup parent from repository -->
+        <relativePath/> <!-- lookup parent from com.tekshila.userservice.repository -->
     </parent>
     <groupId>com.tekshila</groupId>
-    <artifactId>trip-service</artifactId>
+    <artifactId>trip-com.tekshila.userservice.service</artifactId>
     <version>0.0.1-SNAPSHOT</version>
-    <name>trip-service</name>
+    <name>trip-com.tekshila.userservice.service</name>
     <description>Trip Service</description>
     <properties>
         <java.version>11</java.version>
