@@ -2,11 +2,14 @@ package com.tekshila.userservice;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
+import org.springframework.boot.web.client.RestTemplateBuilder;
 import org.springframework.cloud.client.discovery.EnableDiscoveryClient;
+import org.springframework.cloud.client.loadbalancer.LoadBalanced;
+import org.springframework.cloud.netflix.eureka.EnableEurekaClient;
 import org.springframework.context.annotation.Bean;
 import org.springframework.web.client.RestTemplate;
 
-@EnableDiscoveryClient
+@EnableEurekaClient
 @SpringBootApplication
 public class UserServiceApplication {
 
@@ -15,8 +18,9 @@ public class UserServiceApplication {
     }
 
 
+    @LoadBalanced
     @Bean
-    public RestTemplate createRestTemplate() {
-        return new RestTemplate();
+    public RestTemplate createRestTemplate(RestTemplateBuilder builder) {
+        return builder.build();
     }
 }
