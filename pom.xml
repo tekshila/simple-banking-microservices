@@ -21,5 +21,6 @@
     <modules>
         <module>customer-service</module>
         <module>trip-service</module>
+        <module>service-registry</module>
     </modules>
 </project>

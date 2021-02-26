@@ -1,10 +1,10 @@
-package com.tekshila.serviceregistry;
+package com.tekshila.servicediscovery;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;
 
 @SpringBootTest
-class ServiceRegistryApplicationTests {
+class ServiceDiscoveryApplicationTests {
 
     @Test
     void contextLoads() {
