@@ -40,7 +40,7 @@ public class CustomerController {
             return null;
         } else {
             Customer cust = custs.get(0);
-            ResponseEntity<Trip[]> resp = restTemplate.getForEntity("http://localhost:9002/tekshila/api/v1/trips/" + customerId, Trip[].class);
+            ResponseEntity<Trip[]> resp = restTemplate.getForEntity("http://TRIP-SERVICE/tekshila/api/v1/trips/" + customerId, Trip[].class);
                 cust.setTrips(Arrays.asList(resp.getBody()));
             return cust;
         }
